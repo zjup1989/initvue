@@ -1,4 +1,4 @@
-import { reactive } from "./node_modules/@vue/reactivity/dist/reactivity.esm-browser.js"
+import { reactive } from "./core/reactivity.js"
 import { h } from './core/h.js'
 
 export default {
@@ -14,9 +14,9 @@ export default {
         }
     },
     render(context){
-        return h('div', {class: 'odiv'}, [
-            h('p',{},context.state.count),
-            h('p',{},'hellow!')
+        return h('div', {class: 'odiv' + context.state.count}, [
+            h('p', {}, context.state.count),
+            h('p', {}, 'hellow!')
         ])
     }
 }

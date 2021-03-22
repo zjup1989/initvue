@@ -1,4 +1,4 @@
-import { effect } from '../node_modules/@vue/reactivity/dist/reactivity.esm-browser.js'
+import { effectWatch } from './reactivity.js'
 import { mountComponent, diff } from './renderer.js'
 export function createApp(rootComponent) {
     return {
@@ -8,7 +8,7 @@ export function createApp(rootComponent) {
             setup = setup()
             let isMounted = false
             let preSubtree = null
-            effect(() => {
+            effectWatch(() => {
                 if (!isMounted) {
                     isMounted = true
                     const subtree = render(setup)
