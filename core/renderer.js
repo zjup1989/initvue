@@ -1,7 +1,7 @@
 export function mountComponent(vnode, container) {
     const { tag, props, children } = vnode
     // 标签
-    const el = document.createElement(tag)
+    const el = (vnode.el = document.createElement(tag))
     // 属性
     for (const prop in props) {
         const value = props[prop];
